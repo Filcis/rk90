@@ -32,4 +32,11 @@
 
 #featured-image-text__wrapper {
     margin: -50px auto 0 auto;
+//    @include display(flex);
+//    @include justify-content(center);
+//    @include align-items(center);
+}
+
+.featured-image-logo {
+//    max-width: 140px;
 }
