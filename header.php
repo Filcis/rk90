@@ -41,8 +41,17 @@
                 <!-- #site-navigation -->
             </header>
             <!-- #masthead -->
-            <div id="page-featured-image">
-            <p><?php echo get_post_meta($post->ID, 'rk90subtitle',true)?></p>
+            <?php
+            if (has_post_thumbnail()) {
+                $rk90_featured_image_url = get_the_post_thumbnail_url();
+            } else {
+                $rk90_featured_image_url= '';
+            }
+            ?>
+            <div id="page-featured-image" style="background-image: url(<?php echo $rk90_featured_image_url ?>)">
+                <div id="featured-image-text__wrapper" class="container">
+                    <p class="featured-image-text"><?php echo get_post_meta($post->ID, 'rk90subtitle',true)?></p>
+                </div>
             </div>
             <!-- #featured image -->
             <div id="content" class="site-content container">
