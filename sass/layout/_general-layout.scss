@@ -2,14 +2,11 @@
     width: 100%;
     height: auto;
     border-bottom: 1px solid #f1f1f1;
-    @include mq('from-medium') {
-        height: 7rem;
-    }
 }
 
 .container {
     position: relative;
-    width: auto;
+    width: 100%;
     @include mq('from-medium') {
         max-width: 1080px;
         margin: 0 auto;
@@ -22,13 +19,17 @@
 #page-featured-image {
     width: 100%;
     height: 75vh;
+    margin: 0;
     background-color: #eee;
     background-position: bottom;
     background-size: cover;
     background-repeat: no-repeat;
     position: relative;
+    @include display(flex);
+    @include flex-direction(column);
+    @include justify-content(center);
 }
 
 #featured-image-text__wrapper {
-    margin: auto;
+    margin: -50px auto 0 auto;
 }
