@@ -50,7 +50,7 @@
             ?>
             <div id="page-featured-image" style="background-image: url(<?php echo $rk90_featured_image_url ?>)">
                 <div id="featured-image-text__wrapper" class="container">
-                    <p class="featured-image-text"><?php echo get_post_meta($post->ID, 'rk90subtitle',true)?></p>
+                    <p class="featured-image-text"><?php rk90_the_subtitle_meta(); ?></p>
                 </div>
             </div>
             <!-- #featured image -->
