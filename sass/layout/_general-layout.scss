@@ -1,0 +1,26 @@
+#masthead {
+    width: 100%;
+    height: auto;
+    border-bottom: 1px solid #f1f1f1;
+    @include mq('from-medium') {
+        height: 7rem;
+    }
+}
+
+.container {
+    position: relative;
+    width: auto;
+    @include mq('from-medium') {
+        max-width: 1080px;
+        margin: 0 auto;
+    }
+    @include mq('large') {
+        max-width: 1180px;
+    }
+}
+
+#page-featured-image {
+    width: 100%;
+    height: 60vh;
+    background-color: #eee;
+}
