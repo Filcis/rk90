@@ -25,6 +25,7 @@ Nicolas Gallagher and Jonathan Neal http://necolas.github.com/normalize.css/
 >>> TABLE OF CONTENTS:
 ----------------------------------------------------------------
 # Normalize
+# Bourbon
 # Layout
 # Typography
 # Elements
@@ -53,6 +54,12 @@ Nicolas Gallagher and Jonathan Neal http://necolas.github.com/normalize.css/
 --------------------------------------------------------------*/
 
 @import "normalize";
+
+/*--------------------------------------------------------------
+# Bourbon
+--------------------------------------------------------------*/
+
+@import "bourbon/bourbon";
 
 /*--------------------------------------------------------------
 # Layout
