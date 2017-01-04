@@ -34,7 +34,7 @@
                             <img alt="<?php bloginfo( 'name' ); ?>" src="<?php echo get_template_directory_uri() . '/assets/logo_90.svg' ?>">
                         </a> </div>
                     <!-- .site-branding -->
-                    <nav id="site-navigation" class="main-navigation" role="navigation">
+                    <nav id="site-navigation" class="main-navigation small-12 medium-9" role="navigation">
                         <?php wp_nav_menu( array( 'theme_location' => 'menu-1', 'menu_id' => 'primary-menu' ) ); ?>
                     </nav>
                 </div>

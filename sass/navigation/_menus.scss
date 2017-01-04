@@ -17,6 +17,10 @@
         list-style: none;
         margin: 0;
         padding-left: 0;
+        text-align: center;
+        @include mq('from-medium'){
+        text-align: right; 
+        }
     }
     li {
         display: inline-block;
@@ -30,10 +34,14 @@
         text-decoration: none;
         font-family: 'Josefin Sans', sans-serif;
         font-size: 1.15rem;
-        line-height: 2rem;
-        margin: 2.5rem 0;
+//        line-height: 2rem;
+        margin: 1.5rem 0;
         color: $color__main-nav-link;
         border-bottom: 1px solid #eee;
+        @include mq('from-medium') {
+            line-height: 2rem;
+            margin: 2.5rem 0;
+        }
         &:hover {
         border-bottom: 2px solid red;
         }
@@ -48,6 +56,11 @@
     img {
         max-height: 7rem;
         padding: 0.25rem 0;
+    }
+    @include mq('small'){
+        display: block;
+        margin: 0 auto;
+        width: 120px;
     }
 }
 
