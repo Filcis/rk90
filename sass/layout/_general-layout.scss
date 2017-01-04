@@ -4,18 +4,6 @@
     border-bottom: 1px solid #f1f1f1;
 }
 
-.container {
-    position: relative;
-    width: 100%;
-    @include mq('from-medium') {
-        max-width: 1080px;
-        margin: 0 auto;
-    }
-    @include mq('large') {
-        max-width: 1180px;
-    }
-}
-
 #page-featured-image {
     width: 100%;
     height: 75vh;
@@ -39,6 +27,44 @@
 
 .featured-image-logo {
 //    max-width: 140px;
+}
+
+/* --------------------------------------------------------------------------------------------
+    NEAT GRID
+   -------------------------------------------------------------------------------------------- */
+
+.container {
+    @include outer-container(90%);
+    @include mq('large') {
+        @include outer-container;
+    }  
+}
+
+.row {
+    @include row;
+}
+
+
+@for $i from 1 through 12 {
+    .small-#{$i} {
+        @include span-columns($i);
+    }
+}
+
+@include mq('from-medium'){
+    @for $i from 1 through 12 {
+        .medium-#{$i} {
+            @include span-columns($i);
+        }
+    }
+}
+
+@include mq('large'){
+    @for $i from 1 through 12 {
+        .large-#{$i} {
+            @include span-columns($i);
+        }
+    }
 }
 
 /* --------------------------------------------------------------------------------------------
