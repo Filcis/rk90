@@ -13,16 +13,19 @@
     background-size: cover;
     background-repeat: no-repeat;
     position: relative;
-    @include display(flex);
-    @include flex-direction(column);
-    @include justify-content(center);
+    overflow: hidden;
+    display: inline-block;
+//    @include display(flex);
+//    @include flex-direction(column);
+//    @include justify-content(center);
+}
+
+.novh #page-featured-image {
+    height: 700px;
 }
 
 #featured-image-text__wrapper {
-    margin: -50px auto 0 auto;
-//    @include display(flex);
-//    @include justify-content(center);
-//    @include align-items(center);
+    margin: 25vh auto 0 auto;
 }
 
 .featured-image-logo {

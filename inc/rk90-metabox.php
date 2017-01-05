@@ -58,5 +58,11 @@ function rk90_the_subtitle_meta() {
     $metabox_value = rk90_subtitle_get_meta( 'rk90_subtitle' );
     $metabox_value = str_replace('[', '<', $metabox_value);
     $metabox_value = str_replace(']', '>', $metabox_value);
-    echo $metabox_value;
+    if (!empty($metabox_value)){
+        
+        echo '<div id="featured-image-text__wrapper" class="container">
+                    <p class="featured-image-text">' . $metabox_value . 
+                    '</p>
+              </div>';
+    }
 }

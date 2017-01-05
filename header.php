@@ -42,18 +42,16 @@
             </header>
             <!-- #masthead -->
             <?php
-            if (has_post_thumbnail()) {
+            if (has_post_thumbnail() && !is_home()) {
                 $rk90_featured_image_url = get_the_post_thumbnail_url();
+            } elseif (is_home()) {
+                $rk90_featured_image_url = get_the_post_thumbnail_url( get_option( 'page_for_posts' ) );
             } else {
                 $rk90_featured_image_url= '';
             }
             ?>
-            <div id="page-featured-image" style="background-image: url(<?php echo $rk90_featured_image_url ?>)">
-                <div id="featured-image-text__wrapper" class="container">
-                    <p class="featured-image-text">
-                       <?php rk90_the_subtitle_meta(); ?>
-                    </p>
-                </div>
+            <div id="page-featured-image" style="background-image: url(<?php echo $rk90_featured_image_url ?>)">        
+                <?php rk90_the_subtitle_meta(); ?>
             </div>
             <!-- #featured image -->
             <div id="content" class="site-content container">
