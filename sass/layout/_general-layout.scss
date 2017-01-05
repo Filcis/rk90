@@ -44,6 +44,16 @@
     @include row;
 }
 
+@include mq('from-medium'){
+    @for $i from 1 through 12 {
+        .push-#{$i} {
+            @include shift($i);
+        }
+        .pull-#{$i} {
+            @include shift(-$i);
+        }
+    }
+}
 
 @for $i from 1 through 12 {
     .small-#{$i} {
