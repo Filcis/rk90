@@ -50,8 +50,13 @@
                 $rk90_featured_image_url= '';
             }
             ?>
+            <div class="header-wrapper container">
+                <header class="entry-header medium-4">
+                    <?php the_title( '<h1 class="entry-title">', '</h1>' ); ?>
+                </header><!-- .entry-header -->
+            <?php  rk90_the_subtitle_meta(); ?>
+            </div>
             <div id="page-featured-image" style="background-image: url(<?php echo $rk90_featured_image_url ?>)">        
-                <?php rk90_the_subtitle_meta(); ?>
             </div>
             <!-- #featured image -->
             <div id="content" class="site-content container">

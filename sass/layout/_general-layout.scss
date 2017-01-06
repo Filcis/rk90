@@ -1,7 +1,7 @@
 #masthead {
     width: 100%;
     height: auto;
-    border-bottom: 1px solid #f1f1f1;
+    border-bottom: 1px solid #ddd;
 }
 
 #page-featured-image {
@@ -25,7 +25,11 @@
 }
 
 #featured-image-text__wrapper {
-    margin: 25vh auto 0 auto;
+    margin: 0 auto 0 auto;
+}
+
+.header-wrapper {
+    margin: 0.75rem 0;
 }
 
 .featured-image-logo {

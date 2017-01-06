@@ -60,7 +60,7 @@ function rk90_the_subtitle_meta() {
     $metabox_value = str_replace(']', '>', $metabox_value);
     if (!empty($metabox_value)){
         
-        echo '<div id="featured-image-text__wrapper" class="container">
+        echo '<div id="featured-image-text__wrapper" class="medium-8">
                     <p class="featured-image-text">' . $metabox_value . 
                     '</p>
               </div>';
