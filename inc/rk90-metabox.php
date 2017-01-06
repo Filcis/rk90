@@ -5,9 +5,15 @@
  */
 
 function rk90_subtitle_get_meta( $value ) {
+    
 	global $post;
+    $id = $post->ID;
+    if(is_home()){
+        global $wp_query;
+        $id = $wp_query->get_queried_object_id();
+    }
 
-	$field = get_post_meta( $post->ID, $value, true );
+	$field = get_post_meta( $id, $value, true );
 	if ( ! empty( $field ) ) {
 		return is_array( $field ) ? stripslashes_deep( $field ) : stripslashes( wp_kses_decode_entities( $field ) );
 	} else {

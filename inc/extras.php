@@ -37,3 +37,20 @@ function rk90_pingback_header() {
 	}
 }
 add_action( 'wp_head', 'rk90_pingback_header' );
+
+function rk90_header() {
+    if (!is_single()) : ?>
+        <header class="entry-header medium-4">
+                        <?php
+                        if (!is_home()) {
+                            the_title( '<h1 class="entry-title">', '</h1>' ); 
+                        } else {
+                            echo '<h1 class="entry-title">' . apply_filters( 'the_title', get_the_title( get_option( 'page_for_posts' ) )) . '</h1>';
+                        }
+                    ?> </header>       
+    <?php else : ?>
+    <header class="entry-header__single">
+            <?php the_title( '<h1 class="entry-title">', '</h1>' );  ?> 
+    </header> 
+<?php endif;
+}
