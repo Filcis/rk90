@@ -49,22 +49,22 @@ function rk90_entry_footer() {
 		/* translators: used between list items, there is a space after the comma */
 		$categories_list = get_the_category_list( esc_html__( ', ', 'rk90' ) );
 		if ( $categories_list && rk90_categorized_blog() ) {
-			printf( '<span class="cat-links">' . esc_html__( 'Posted in %1$s', 'rk90' ) . '</span>', $categories_list ); // WPCS: XSS OK.
+			printf( '<span class="cat-links">' . esc_html__( 'Kategorie %1$s', 'rk90' ) . '</span>', $categories_list ); // WPCS: XSS OK.
 		}
 
 		/* translators: used between list items, there is a space after the comma */
 		$tags_list = get_the_tag_list( '', esc_html__( ', ', 'rk90' ) );
 		if ( $tags_list ) {
-			printf( '<p class="tags-links">' . esc_html__( 'Tagged %1$s', 'rk90' ) . '</p>', $tags_list ); // WPCS: XSS OK.
+			printf( '<p class="tags-links">' . esc_html__( 'Tagi %1$s', 'rk90' ) . '</p>', $tags_list ); // WPCS: XSS OK.
 		}
 	}
 
-	if ( ! is_single() && ! post_password_required() && ( comments_open() || get_comments_number() ) ) {
-		echo '<p class="comments-link">';
-		/* translators: %s: post title */
-		comments_popup_link( sprintf( wp_kses( __( 'Leave a Comment<span class="screen-reader-text"> on %s</span>', 'rk90' ), array( 'span' => array( 'class' => array() ) ) ), get_the_title() ) );
-		echo '</p>';
-	}
+//	if ( ! is_single() && ! post_password_required() && ( comments_open() || get_comments_number() ) ) {
+//		echo '<p class="comments-link">';
+//		/* translators: %s: post title */
+//		comments_popup_link( sprintf( wp_kses( __( 'Leave a Comment<span class="screen-reader-text"> on %s</span>', 'rk90' ), array( 'span' => array( 'class' => array() ) ) ), get_the_title() ) );
+//		echo '</p>';
+//	}
 
 	edit_post_link(
 		sprintf(

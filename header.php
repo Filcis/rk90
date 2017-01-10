@@ -50,8 +50,17 @@
                 $rk90_featured_image_url= '';
             }
             ?>
-            <div id="page-featured-image" style="background-image: url(<?php echo $rk90_featured_image_url ?>)">        
-                <?php rk90_the_subtitle_meta(); ?>
-            </div>
-            <!-- #featured image -->
-            <div id="content" class="site-content container">
+                <div class="header-wrapper container">
+                    <!-- .entry-header -->
+                    <?php 
+                    rk90_header();
+                    if (!is_single()) {
+                        rk90_the_subtitle_meta();
+                    } 
+                    ?>
+                </div>
+                <?php if (has_post_thumbnail() || is_home() && has_post_thumbnail(get_option( 'page_for_posts' )) ) : ?>
+                <div id="page-featured-image" style="background-image: url(<?php echo $rk90_featured_image_url ?>)"> </div>
+<?php endif;?>
+                <!-- #featured image -->
+                <div id="content" class="site-content container">

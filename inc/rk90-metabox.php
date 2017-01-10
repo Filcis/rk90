@@ -5,9 +5,15 @@
  */
 
 function rk90_subtitle_get_meta( $value ) {
+    
 	global $post;
+    $id = $post->ID;
+    if(is_home()){
+        global $wp_query;
+        $id = $wp_query->get_queried_object_id();
+    }
 
-	$field = get_post_meta( $post->ID, $value, true );
+	$field = get_post_meta( $id, $value, true );
 	if ( ! empty( $field ) ) {
 		return is_array( $field ) ? stripslashes_deep( $field ) : stripslashes( wp_kses_decode_entities( $field ) );
 	} else {
@@ -60,7 +66,7 @@ function rk90_the_subtitle_meta() {
     $metabox_value = str_replace(']', '>', $metabox_value);
     if (!empty($metabox_value)){
         
-        echo '<div id="featured-image-text__wrapper" class="container">
+        echo '<div id="featured-image-text__wrapper" class="medium-8">
                     <p class="featured-image-text">' . $metabox_value . 
                     '</p>
               </div>';
