@@ -45,6 +45,11 @@
             @content;
         }
     }
+    @else if $break=="very_large" {
+        @media (min-width: $brkpoint-vlg + 1) {
+            @content;
+        }
+    }
     @else {
         @media (max-width: $break) {
             @content;

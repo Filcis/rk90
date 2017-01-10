@@ -47,6 +47,10 @@
         color: $color__main-nav-link;
         border-bottom: 1px solid #eee;
         @include mq('from-medium') {
+            line-height: 1.8rem;
+            margin: 2rem 0;
+        }
+        @include mq('very_large'){
             line-height: 2rem;
             margin: 2.5rem 0;
         }
@@ -62,13 +66,16 @@
 
 .site-logo {
     img {
-        max-height: 7rem;
+        max-height: 6rem;
         padding: 0.25rem 0;
     }
     @include mq('small'){
         display: block;
         margin: 0 auto;
         width: 120px;
+    }
+    @include mq('very_large'){
+        max-height: 7rem;
     }
 }
 
