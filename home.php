@@ -14,7 +14,7 @@
 
 get_header(); ?>
 
-	<div id="primary" class="content-area medium-7">
+	<div id="primary" class="content-area medium-8">
 		<main id="main" class="site-main" role="main">
             <header class="entry-header">
                 <h1 class="entry-title">
@@ -32,7 +32,6 @@ get_header(); ?>
 
 			<?php
 			endif;
-
 			/* Start the Loop */
 			while ( have_posts() ) : the_post();
 

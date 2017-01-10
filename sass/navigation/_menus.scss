@@ -25,9 +25,17 @@
     li {
         display: inline-block;
         position: relative;
-        margin-right: 2rem;
+        margin-right: 1.6rem;
+        @include mq('from-medium') {
+            margin-right: 2rem;
+            }
         &:hover > a,
         &.focus > a {}
+        &:last-child {
+            @include mq('from-medium') {
+            margin-right: 0;
+            }
+            }
     }
     a {
         display: block;

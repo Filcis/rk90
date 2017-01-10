@@ -1,8 +1,13 @@
 a {
 	color: $color__link;
-
+    .entry-content p & {
+    background-color: $color__background-link;
+        padding: 0.15em;
+    }
+    text-decoration: none;
+    
 	&:visited {
-		color: $color__link-visited;
+//		color: $color__link-visited;
 	}
 	&:hover,
 	&:focus,
@@ -16,4 +21,24 @@ a {
 	&:active {
 		outline: 0;
 	}
+}
+
+.entry-content .more-link {
+    padding: 0.5em 0.6em;
+    border-radius: 0.5em;
+    margin: 1.2em auto;
+    background-color: $color__background-more-link;
+    color: #fff;
+    font-size: 0.8em;
+    &:hover {
+        background-color: $color__background-more-link__hover;
+    }
+}
+
+.tags-links a,
+.cat-links a {
+    font-size: 0.8em;
+    padding: 0.45em 0.5em;
+    border-radius: 0.7em;
+    border: 1px solid $color__background-more-link;
 }

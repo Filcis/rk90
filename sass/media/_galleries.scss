@@ -1,11 +1,26 @@
 .gallery {
-	margin-bottom: 1.5em;
+	margin-bottom: 0;
+    figure{
+        margin: 0;
+      background-color: #777;
+        vertical-align:middle;
+        figcaption{
+          vertical-align:middle;  
+        }
+        img {
+            display: block;   
+            vertical-align:text-bottom;
+            opacity: 0.9;
+            &:hover {
+                opacity: 1;
+            }
+        }
+    }
 }
 
 .gallery-item {
 	display: inline-block;
-	text-align: center;
-	vertical-align: top;
+//    float: left;
 	width: 100%;
 
 	.gallery-columns-2 & {

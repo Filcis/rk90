@@ -1,3 +1,10 @@
+.widget-area {
+    background-color: #fafafc;
+    @include mq('from-medium'){
+    padding: 2em;
+    }
+}
+
 .widget {
 	margin: 0 0 1.5em;
 

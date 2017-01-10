@@ -54,3 +54,11 @@ function rk90_header() {
     </header> 
 <?php endif;
 }
+
+function rk90_post_class( $classes ) {
+    if(is_home()){
+        array_push($classes, 'post-card');
+    }
+    return $classes;
+}
+add_filter( 'post_class', 'rk90_post_class' );

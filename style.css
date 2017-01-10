@@ -243,7 +243,6 @@ html {
 
 #page-featured-image {
   width: 100%;
-  height: 75vh;
   margin: 0;
   background-color: #eee;
   background-position: bottom;
@@ -251,7 +250,14 @@ html {
   background-repeat: no-repeat;
   position: relative;
   overflow: hidden;
-  display: inline-block; }
+  display: inline-block;
+  height: 45vh; }
+  @media (min-width: 765px) and (max-width: 1200px) {
+    #page-featured-image {
+      height: 60vh; } }
+  @media (min-width: 1201px) {
+    #page-featured-image {
+      height: 70vh; } }
 
 .novh #page-featured-image {
   height: 700px; }
@@ -308,9 +314,34 @@ html {
       flex-direction: column;
       -ms-flex-direction: column; } }
 
+.flexbox .single-post .header-wrapper {
+  display: block; }
+
+.content-area__single {
+  border-top: 1px solid #ddd;
+  padding-top: 1.2em; }
+
 /* --------------------------------------------------------------------------------------------
     NEAT GRID
    -------------------------------------------------------------------------------------------- */
+.blog .container {
+  max-width: 90%;
+  margin-left: auto;
+  margin-right: auto; }
+  .blog .container::after {
+    clear: both;
+    content: "";
+    display: block; }
+  @media (min-width: 1201px) {
+    .blog .container {
+      max-width: 1200px;
+      margin-left: auto;
+      margin-right: auto; }
+      .blog .container::after {
+        clear: both;
+        content: "";
+        display: block; } }
+
 .container {
   max-width: 90%;
   margin-left: auto;
@@ -321,7 +352,7 @@ html {
     display: block; }
   @media (min-width: 1201px) {
     .container {
-      max-width: 1200px;
+      max-width: 1080px;
       margin-left: auto;
       margin-right: auto; }
       .container::after {
@@ -330,7 +361,8 @@ html {
         display: block; } }
 
 .row {
-  display: block; }
+  display: block;
+  margin-bottom: 1.5em; }
   .row::after {
     clear: both;
     content: "";
@@ -711,15 +743,16 @@ button,
 input,
 select,
 textarea {
-  color: #404040;
-  font-family: sans-serif;
+  color: #666;
+  font-family: "PT Serif", serif;
   font-size: 16px;
   font-size: 1rem;
   line-height: 1.5; }
 
 h1, h2, h3, h4, h5, h6 {
   clear: both;
-  font-family: "Josefin Sans", sans-serif; }
+  font-family: "Josefin Sans", sans-serif;
+  margin: 0 0 0.8em 0; }
 
 .featured-image-text {
   font-size: 1.8rem;
@@ -742,8 +775,22 @@ h1, h2, h3, h4, h5, h6 {
       padding-right: 1rem;
       border-right: 1px solid #ccc; } }
 
+.entry-header__single .entry-title {
+  font-size: 3em; }
+
+html {
+  font-size: 87%; }
+  @media (min-width: 765px) and (max-width: 1200px) {
+    html {
+      font-size: 95%; } }
+  @media (min-width: 1201px) {
+    html {
+      font-size: 100%; } }
+
 p {
-  margin-bottom: 1.5em; }
+  margin-bottom: 1.5em;
+  font-size: 1.1em;
+  color: #666; }
 
 dfn, cite, em, i {
   font-style: italic; }
@@ -928,15 +975,34 @@ textarea {
 ## Links
 --------------------------------------------------------------*/
 a {
-  color: royalblue; }
-  a:visited {
-    color: purple; }
+  color: #dd2432;
+  text-decoration: none; }
+  .entry-content p a {
+    background-color: #f8d5d7;
+    padding: 0.15em; }
   a:hover, a:focus, a:active {
     color: midnightblue; }
   a:focus {
     outline: thin dotted; }
   a:hover, a:active {
     outline: 0; }
+
+.entry-content .more-link {
+  padding: 0.5em 0.6em;
+  border-radius: 0.5em;
+  margin: 1.2em auto;
+  background-color: #e76670;
+  color: #fff;
+  font-size: 0.8em; }
+  .entry-content .more-link:hover {
+    background-color: #e03a47; }
+
+.tags-links a,
+.cat-links a {
+  font-size: 0.8em;
+  padding: 0.45em 0.5em;
+  border-radius: 0.7em;
+  border: 1px solid #e76670; }
 
 /*--------------------------------------------------------------
 ## Menus
@@ -964,7 +1030,13 @@ a {
   .main-navigation li {
     display: inline-block;
     position: relative;
-    margin-right: 2rem; }
+    margin-right: 1.6rem; }
+    @media (min-width: 765px) {
+      .main-navigation li {
+        margin-right: 2rem; } }
+    @media (min-width: 765px) {
+      .main-navigation li:last-child {
+        margin-right: 0; } }
   .main-navigation a {
     display: block;
     text-decoration: none;
@@ -1097,6 +1169,12 @@ a {
 /*--------------------------------------------------------------
 # Widgets
 --------------------------------------------------------------*/
+.widget-area {
+  background-color: #fafafc; }
+  @media (min-width: 765px) {
+    .widget-area {
+      padding: 2em; } }
+
 .widget {
   margin: 0 0 1.5em;
   /* Make sure select elements fit in widgets. */ }
@@ -1126,11 +1204,15 @@ a {
 .page-content,
 .entry-content,
 .entry-summary {
-  margin: 1.5em 0 0; }
+  margin: 2.5em 0 0; }
 
 .page-links {
   clear: both;
   margin: 0 0 1.5em; }
+
+.post-card {
+  border: 1px solid #eee;
+  padding: 2em; }
 
 /*--------------------------------------------------------------
 ## Comments
@@ -1191,12 +1273,22 @@ object {
 ## Galleries
 --------------------------------------------------------------*/
 .gallery {
-  margin-bottom: 1.5em; }
+  margin-bottom: 0; }
+  .gallery figure {
+    margin: 0;
+    background-color: #777;
+    vertical-align: middle; }
+    .gallery figure figcaption {
+      vertical-align: middle; }
+    .gallery figure img {
+      display: block;
+      vertical-align: text-bottom;
+      opacity: 0.9; }
+      .gallery figure img:hover {
+        opacity: 1; }
 
 .gallery-item {
   display: inline-block;
-  text-align: center;
-  vertical-align: top;
   width: 100%; }
   .gallery-columns-2 .gallery-item {
     max-width: 50%; }
