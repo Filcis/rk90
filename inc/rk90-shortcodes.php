@@ -33,12 +33,18 @@ add_shortcode( 'rk90_column', 'rk90_column');
 
 function rk90_gadget_loop($atts) {
     $atts = shortcode_atts( array(
-        'rodzaj' => ''
+        'rodzaj' => '',
     ), $atts );
     $args = array(
         'post_type' => 'rk90_Gadget', 
         'posts_per_page' => 20,
-        'taxonomy' => $atts['rodzaj'],
+        'tax_query' => array(
+		array(
+			'taxonomy' => 'rk90_gadget_cat',
+			'field'    => 'slug',
+			'terms'    => $atts['rodzaj'],
+		),
+	),
     );
     $posts = new WP_Query($args);
     	ob_start();
@@ -46,7 +52,7 @@ function rk90_gadget_loop($atts) {
 		if ( $posts->have_posts() ) {
 			while ( $posts->have_posts() ) :
 				$posts->the_post();
-				global $post;
+//				global $post;
 				?>
 				<div id="su-post-<?php the_ID(); ?>" class="medium-4">
 					<?php if ( has_post_thumbnail() ) : ?>
