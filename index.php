@@ -14,9 +14,16 @@
 
 get_header(); ?>
 
-	<div id="primary" class="content-area">
-		<main id="main" class="site-main" role="main">
+<div id="content" class="site-content container">
 
+	<div id="primary" class="content-area medium-8">
+		<main id="main" class="site-main" role="main">
+            <header class="entry-header">
+                <h1 class="entry-title">
+		<?php echo apply_filters( 'the_title', get_the_title( get_option( 'page_for_posts' ) ) ); ?>
+                </h1>
+                <hr>
+	</header><!-- .entry-header -->
 		<?php
 		if ( have_posts() ) :
 
@@ -27,7 +34,6 @@ get_header(); ?>
 
 			<?php
 			endif;
-
 			/* Start the Loop */
 			while ( have_posts() ) : the_post();
 

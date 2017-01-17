@@ -8,14 +8,15 @@
  */
 
 get_header(); ?>
+<div id="content" class="site-content container">
 
-	<div id="primary" class="content-area">
+	<div id="primary" class="content-area medium-7">
 		<main id="main" class="site-main" role="main">
 
 		<?php
 		if ( have_posts() ) : ?>
 
-			<header class="page-header">
+			<header class="archive-header">
 				<?php
 					the_archive_title( '<h1 class="page-title">', '</h1>' );
 					the_archive_description( '<div class="archive-description">', '</div>' );

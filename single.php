@@ -8,6 +8,18 @@
  */
 
 get_header(); ?>
+<!-- .featured image -->
+<?php
+if (has_post_thumbnail()) : 
+$rk90_featured_image_url = get_the_post_thumbnail_url(); ?>
+<div id="page-featured-image" style="background-image: url(<?php echo $rk90_featured_image_url ?>)"> </div>
+<?php endif;?>
+<!-- #featured image -->
+<div id="content" class="site-content container">
+
+    <header class="entry-header__single">
+            <?php the_title( '<h1 class="entry-title">', '</h1>' );  ?> 
+    </header> 
 
 	<div id="primary" class="content-area__single medium-7">
 		<main id="main" class="site-main" role="main">

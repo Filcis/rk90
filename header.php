@@ -25,42 +25,27 @@
             <a class="skip-link screen-reader-text" href="#content">
                 <?php esc_html_e( 'Skip to content', 'rk90' ); ?>
             </a>
-            <!-----------------------------------------------------------
------------------NAVIGATION AND BRANDING---------------------
+<!-----------------------------------------------------------
+----------------- NAVIGATION AND BRANDING ---------------------
 ------------------------------------------------------------>
             <header id="masthead" class="site-header" role="banner">
-                <div class="main-navigation-wrapper container">
-                    <div class="site-branding"> <a class="site-logo" href="<?php echo esc_url( home_url( '/' ) ); ?>" rel="home">
-                            <img alt="<?php bloginfo( 'name' ); ?>" src="<?php echo get_template_directory_uri() . '/assets/logo_90.svg' ?>">
-                        </a> </div>
-                    <!-- .site-branding -->
-                    <nav id="site-navigation" class="main-navigation small-12 medium-9" role="navigation">
-                        <?php wp_nav_menu( array( 'theme_location' => 'menu-1', 'menu_id' => 'primary-menu' ) ); ?>
-                    </nav>
+                <div class="main-navigation-wrapper">
+                    <div class="container">
+                        <div class="site-branding"> 
+                            <a class="site-logo" href="<?php echo esc_url( home_url( '/' ) ); ?>" rel="home">
+                                <img alt="<?php bloginfo( 'name' ); ?>" src="<?php echo get_template_directory_uri() . '/assets/logo_90.svg' ?>">
+                            </a> 
+                        </div>                  
+                        <!-- .site-nav -->
+                        <nav id="site-navigation" class="main-navigation small-12 medium-9" role="navigation">
+                            <?php wp_nav_menu( array( 'theme_location' => 'menu-1', 'menu_id' => 'primary-menu' ) ); ?>
+                        </nav>
+                        <!-- #site-navigation -->
+                    </div>
                 </div>
-                <!-- #site-navigation -->
+                <!-- .entry-header -->
+                <div class="page-title-wrapper container">
+                <?php rk90_page_title(); ?>
+                </div>
             </header>
             <!-- #masthead -->
-            <?php
-            if (has_post_thumbnail() && !is_home()) {
-                $rk90_featured_image_url = get_the_post_thumbnail_url();
-            } elseif (is_home()) {
-                $rk90_featured_image_url = get_the_post_thumbnail_url( get_option( 'page_for_posts' ) );
-            } else {
-                $rk90_featured_image_url= '';
-            }
-            ?>
-                <div class="header-wrapper container">
-                    <!-- .entry-header -->
-                    <?php 
-                    rk90_header();
-                    if (!is_single()) {
-                        rk90_the_subtitle_meta();
-                    } 
-                    ?>
-                </div>
-                <?php if (has_post_thumbnail() || is_home() && has_post_thumbnail(get_option( 'page_for_posts' )) ) : ?>
-                <div id="page-featured-image" style="background-image: url(<?php echo $rk90_featured_image_url ?>)"> </div>
-<?php endif;?>
-                <!-- #featured image -->
-                <div id="content" class="site-content container">

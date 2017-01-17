@@ -1,7 +1,6 @@
 #masthead {
     width: 100%;
     height: auto;
-    border-bottom: 1px solid #ddd;
 }
 
 #page-featured-image {
@@ -31,15 +30,15 @@
     margin: 0 auto 0 auto;
 }
 
-.header-wrapper {
+.page-title-wrapper {
     margin: 0.75rem auto;
 }
 
-.flexbox .header-wrapper {
+.flexbox .page-title-wrapper {
     @include mq('from-medium'){
         @include display(flex);
         @include justify-content(center);
-        header {
+        .entry-header {
             @include display(flex);
             @include justify-content(center);  
             @include flex-direction(column);
@@ -64,7 +63,7 @@
     NEAT GRID
    -------------------------------------------------------------------------------------------- */
 
-.blog .container {
+.blog .site-content .container {
     @include outer-container(90%);
     @include mq('large') {
         @include outer-container;

@@ -238,8 +238,7 @@ html {
 --------------------------------------------------------------*/
 #masthead {
   width: 100%;
-  height: auto;
-  border-bottom: 1px solid #ddd; }
+  height: auto; }
 
 #page-featured-image {
   width: 100%;
@@ -265,11 +264,11 @@ html {
 #featured-image-text__wrapper {
   margin: 0 auto 0 auto; }
 
-.header-wrapper {
+.page-title-wrapper {
   margin: 0.75rem auto; }
 
 @media (min-width: 765px) {
-  .flexbox .header-wrapper {
+  .flexbox .page-title-wrapper {
     display: -webkit-box;
     display: -moz-box;
     display: box;
@@ -286,7 +285,7 @@ html {
     -o-justify-content: center;
     justify-content: center;
     -ms-flex-pack: center; }
-    .flexbox .header-wrapper header {
+    .flexbox .page-title-wrapper .entry-header {
       display: -webkit-box;
       display: -moz-box;
       display: box;
@@ -324,20 +323,20 @@ html {
 /* --------------------------------------------------------------------------------------------
     NEAT GRID
    -------------------------------------------------------------------------------------------- */
-.blog .container {
+.blog .site-content .container {
   max-width: 90%;
   margin-left: auto;
   margin-right: auto; }
-  .blog .container::after {
+  .blog .site-content .container::after {
     clear: both;
     content: "";
     display: block; }
   @media (min-width: 1201px) {
-    .blog .container {
+    .blog .site-content .container {
       max-width: 1200px;
       margin-left: auto;
       margin-right: auto; }
-      .blog .container::after {
+      .blog .site-content .container::after {
         clear: both;
         content: "";
         display: block; } }
@@ -767,18 +766,19 @@ h1, h2, h3, h4, h5, h6 {
   font-size: 1.4rem;
   font-weight: 300; }
 
-.header-wrapper .entry-header {
+.page-title-wrapper .entry-header {
   text-align: center; }
   @media (min-width: 765px) {
-    .header-wrapper .entry-header {
+    .page-title-wrapper .entry-header {
       text-align: right;
       padding-right: 1rem;
       border-right: 1px solid #ccc; } }
-  .header-wrapper .entry-header .entry-title {
+  .page-title-wrapper .entry-header .entry-title {
     font-size: 1.8em;
     margin-bottom: 0.6em; }
 
-.entry-header__single .entry-title {
+.entry-header__single .entry-title,
+.archive-header .page-title {
   font-size: 3em; }
 
 html {
@@ -1011,7 +1011,8 @@ a {
 ## Menus
 --------------------------------------------------------------*/
 .main-navigation-wrapper {
-  height: 100%; }
+  height: 100%;
+  border-bottom: 1px solid #ccc; }
 
 @media (min-width: 765px) {
   .site-branding {
@@ -1033,10 +1034,12 @@ a {
   .main-navigation li {
     display: inline-block;
     position: relative;
-    margin-right: 1.6rem; }
+    margin-right: 0.8rem;
+    margin-left: 0.8rem; }
     @media (min-width: 765px) {
       .main-navigation li {
-        margin-right: 2rem; } }
+        margin-right: 2rem;
+        margin-left: 0; } }
     @media (min-width: 765px) {
       .main-navigation li:last-child {
         margin-right: 0; } }
@@ -1054,8 +1057,7 @@ a {
         margin: 2rem 0; } }
     @media (min-width: 1401px) {
       .main-navigation a {
-        line-height: 2rem;
-        margin: 2.5rem 0; } }
+        line-height: 2rem; } }
     .main-navigation a:hover {
       border-bottom: 2px solid red; }
   .main-navigation .current_page_item > a,
@@ -1069,7 +1071,8 @@ a {
   .site-logo {
     display: block;
     margin: 0 auto;
-    width: 120px; } }
+    width: 120px;
+    text-align: center; } }
 @media (min-width: 1401px) {
   .site-logo {
     max-height: 7rem; } }

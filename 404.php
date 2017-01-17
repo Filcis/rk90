@@ -9,13 +9,18 @@
 
 get_header(); ?>
 
+<header class="page-header container">
+    <h1 class="page-title"><?php esc_html_e( 'Oops! Nie znaleziony strony', 'rk90' ); ?></h1>
+</header><!-- .page-header -->
+<!-- .featured image -->
+<div id="page-featured-image" style="background-image: url(/assets/404.jpg)"> </div>
+<!-- #featured image -->
+<div id="content" class="site-content container">
 	<div id="primary" class="content-area">
 		<main id="main" class="site-main" role="main">
 
 			<section class="error-404 not-found">
-				<header class="page-header">
-					<h1 class="page-title"><?php esc_html_e( 'Oops! That page can&rsquo;t be found.', 'rk90' ); ?></h1>
-				</header><!-- .page-header -->
+
 
 				<div class="page-content">
 					<p><?php esc_html_e( 'It looks like nothing was found at this location. Maybe try one of the links below or a search?', 'rk90' ); ?></p>

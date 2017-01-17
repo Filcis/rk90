@@ -1,5 +1,6 @@
 .main-navigation-wrapper {
     height: 100%;
+    border-bottom: 1px solid #ccc; 
 }
 
 .site-branding {
@@ -25,9 +26,11 @@
     li {
         display: inline-block;
         position: relative;
-        margin-right: 1.6rem;
+        margin-right: 0.8rem;
+        margin-left: 0.8rem;
         @include mq('from-medium') {
             margin-right: 2rem;
+            margin-left: 0;
             }
         &:hover > a,
         &.focus > a {}
@@ -42,7 +45,6 @@
         text-decoration: none;
         font-family: 'Josefin Sans', sans-serif;
         font-size: 1.15rem;
-//        line-height: 2rem;
         margin: 1.5rem 0;
         color: $color__main-nav-link;
         border-bottom: 1px solid #eee;
@@ -52,7 +54,6 @@
         }
         @include mq('very_large'){
             line-height: 2rem;
-            margin: 2.5rem 0;
         }
         &:hover {
         border-bottom: 2px solid red;
@@ -73,6 +74,7 @@
         display: block;
         margin: 0 auto;
         width: 120px;
+        text-align: center;
     }
     @include mq('very_large'){
         max-height: 7rem;
