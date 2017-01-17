@@ -33,6 +33,7 @@ function rk90_gadget_cat() {
 		'show_admin_column'          => true,
 		'show_in_nav_menus'          => true,
 		'show_tagcloud'              => true,
+        'publicly_queryable'         => false,
 	);
 	register_taxonomy( 'rk90_gadget_cat', array( 'rk90_Gadget' ), $args );
 
