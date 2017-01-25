@@ -31,3 +31,25 @@
     border: 1px solid #eee;
     padding: 2em;
 }
+
+.gadget_wrapper {
+    @include mq('medium'){
+ @include span-columns(12 of 12);
+    }
+        @include mq('large'){
+  @include span-columns(12 of 12);
+    }
+}
+.gadget_single {
+    border: 1px solid #bbb;
+    padding: 0.25em;
+    margin-bottom: 1.5em;
+    -webkit-box-shadow: 3px 2px 5px 0px rgba(0,0,0,0.36);
+    -moz-box-shadow: 3px 2px 5px 0px rgba(0,0,0,0.36);
+    box-shadow: 3px 2px 5px 0px rgba(0,0,0,0.36);
+}
+
+.gadget_description {
+    padding: 0.75em;
+    margin-bottom: .5em;
+}

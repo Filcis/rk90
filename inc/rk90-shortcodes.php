@@ -47,6 +47,7 @@ function rk90_gadget_loop($atts) {
 	),
     );
     $posts = new WP_Query($args);
+    $output = '<div class="gadget_wrapper">';
     	ob_start();
 		// Posts are found
 		if ( $posts->have_posts() ) {
@@ -54,20 +55,24 @@ function rk90_gadget_loop($atts) {
 				$posts->the_post();
 //				global $post;
 				?>
-				<div id="su-post-<?php the_ID(); ?>" class="medium-4">
 					<?php if ( has_post_thumbnail() ) : ?>
-						<a class="su-post-thumbnail" href="<?php the_permalink(); ?>"><?php the_post_thumbnail(); ?></a>
+						<img class="gadget_zoom gadget_thumbnail" src="<?php the_post_thumbnail_url('small'); ?>" data-zoom-image="<?php the_post_thumbnail_url('large'); ?>">
 					<?php endif; ?>
-					<h2 class="su-post-title"><a href="<?php the_permalink(); ?>"><?php the_title(); ?></a></h2>
+                    <section class="gadget_description">
+                        <h3 class="gadget_title"><?php the_title(); ?></h3>
+                        <?php rk90_gadget_description() ?>
+<!--                    tu funkcja generująca opisy-->
+                    </section>
 				</div>
 				<?php
 			endwhile;
 		}
 		// Posts not found
 		else {
-			echo '<h4>' . __( 'Posts not found', 'shortcodes-ultimate' ) . '</h4>';
+			echo '<h4>' . __( 'brak postów', 'rk90' ) . '</h4>';
 		}
-		$output = ob_get_contents();
+		$output .= ob_get_contents();
+        $output .= '</div>';
 		ob_end_clean();
 		// Reset the query
 		wp_reset_postdata();

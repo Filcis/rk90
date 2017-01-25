@@ -9,9 +9,8 @@ $column: 4.2358em !default;
 /// Sets the relative width of a single grid gutter. The unit used should be the same one used to define `$column`. Set with the `!global` flag.
 ///
 /// @type Number (Unit)
-
+//$gutter: 1.618em !default;
 $gutter: 1.618em !default;
-
 /// Sets the total number of columns in the grid. Its value can be overridden inside a media query using the `media()` mixin. Set with the `!global` flag.
 ///
 /// @type Number (Unitless)

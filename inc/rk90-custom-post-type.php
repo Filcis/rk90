@@ -72,7 +72,7 @@ function rk90_gadgets_post_type() {
 		'can_export'            => true,
 		'has_archive'           => false,		
 		'exclude_from_search'   => false,
-		'publicly_queryable'    => true,
+		'publicly_queryable'    => false,
 		'capability_type'       => 'page',
         'rewrite' => array('slug' => 'gadzety'),
 	);
@@ -80,3 +80,16 @@ function rk90_gadgets_post_type() {
 
 }
 add_action( 'init', 'rk90_gadgets_post_type', 0 );
+
+function rk90_gadget_description(){
+    $sizes =  get_field('dostepne_rozmiary');
+    $type = get_field('dostepne_kroje');
+    $print_technology = get_field('metoda_zadruku');
+    $output = '<p class="gadget_descr">';
+//    array_filter - if no callback is supplied, all entries of array equal to FALSE (see converting to boolean) will be removed.
+    $output .= !empty($sizes) ? '<b>dostępne rozmiary:</b> ' . implode(", ", array_filter($sizes)) . '<br>' : '';
+    $output .= !empty($type) ? '<b>kroje:</b> ' . implode(", ", array_filter($type)) . '<br>' : '';
+    $output .= !empty($print_technology) ?  '<b>metoda zadruku:</b> ' . $print_technology : '';
+    $output .= '</p">';
+    echo $output;
+}
