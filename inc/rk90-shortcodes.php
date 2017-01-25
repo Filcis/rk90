@@ -55,6 +55,7 @@ function rk90_gadget_loop($atts) {
 				$posts->the_post();
 //				global $post;
 				?>
+				<div id="<?php the_ID(); ?>" class="medium-4 gadget_single">
 					<?php if ( has_post_thumbnail() ) : ?>
 						<img class="gadget_zoom gadget_thumbnail" src="<?php the_post_thumbnail_url('small'); ?>" data-zoom-image="<?php the_post_thumbnail_url('large'); ?>">
 					<?php endif; ?>
