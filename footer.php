@@ -15,6 +15,17 @@
 
 	<footer id="colophon" class="site-footer" role="contentinfo">
 		<div class="site-info container">
+            <?php 
+            if ( is_active_sidebar( 'footer-1' ) ){
+                dynamic_sidebar( 'footer-1' );
+            }
+            if ( is_active_sidebar( 'footer-2' ) ){
+                dynamic_sidebar( 'footer-2' );
+            }
+            if ( is_active_sidebar( 'footer-3' ) ){
+                dynamic_sidebar( 'footer-3' );
+            }
+            ?>
 		</div><!-- .site-info -->
 	</footer><!-- #colophon -->
 </div><!-- #page -->

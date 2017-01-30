@@ -91,6 +91,7 @@ add_action( 'after_setup_theme', 'rk90_content_width', 0 );
  * @link https://developer.wordpress.org/themes/functionality/sidebars/#registering-a-sidebar
  */
 function rk90_widgets_init() {
+    //sidebar
 	register_sidebar( array(
 		'name'          => esc_html__( 'Sidebar', 'rk90' ),
 		'id'            => 'sidebar-1',
@@ -100,6 +101,37 @@ function rk90_widgets_init() {
 		'before_title'  => '<h2 class="widget-title">',
 		'after_title'   => '</h2>',
 	) );
+    //footer 1
+    register_sidebar( array(
+		'name'          => esc_html__( 'Footer 1', 'rk90' ),
+		'id'            => 'footer-1',
+		'description'   => esc_html__( 'Pierwsza kolumna stopki.', 'rk90' ),
+		'before_widget' => '<section id="%1$s" class="widget %2$s medium-4">',
+		'after_widget'  => '</section>',
+		'before_title'  => '<h2 class="footer-title">',
+		'after_title'   => '</h2>',
+	) );
+    //footer 2
+    register_sidebar( array(
+		'name'          => esc_html__( 'Footer 2', 'rk90' ),
+		'id'            => 'footer-2',
+		'description'   => esc_html__( 'Druga kolumna stopki.', 'rk90' ),
+		'before_widget' => '<section id="%1$s" class="widget %2$s medium-4">',
+		'after_widget'  => '</section>',
+		'before_title'  => '<h2 class="footer-title">',
+		'after_title'   => '</h2>',
+	) );
+    //footer 3
+    register_sidebar( array(
+		'name'          => esc_html__( 'Footer 3', 'rk90' ),
+		'id'            => 'footer-3',
+		'description'   => esc_html__( 'Trzecia kolumna stopki.', 'rk90' ),
+		'before_widget' => '<section id="%1$s" class="widget %2$s medium-4">',
+		'after_widget'  => '</section>',
+		'before_title'  => '<h2 class="footer-title">',
+		'after_title'   => '</h2>',
+	) );
+    
 }
 add_action( 'widgets_init', 'rk90_widgets_init' );
 
