@@ -10,10 +10,13 @@
  */
 
 ?>
-
 	</div><!-- #content -->
-
 	<footer id="colophon" class="site-footer" role="contentinfo">
+        <?php if(is_front_page()) : ?>
+            <div class="footer_image_wrapper">
+                <img src=<?php echo get_template_directory_uri() . '/assets/Orkiestra.png' ?>>
+            </div>
+        <?php endif; ?>
 		<div class="site-info container">
             <?php 
             if ( is_active_sidebar( 'footer-1' ) ){

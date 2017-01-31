@@ -5,11 +5,23 @@
     }
 }
 
-.widget {
+aside .widget {
 	margin: 0 0 1.5em;
 
 	/* Make sure select elements fit in widgets. */
 	select {
 		max-width: 100%;
 	}
+}
+
+footer .widget {
+    margin-top: 2em;
+    margin-bottom: 2em;
+    color: aliceblue;
+    font-size: 0.8em;
+}
+
+.site-info {
+    padding-top: 0.5em;
+    padding-bottom: 0.5em;
 }

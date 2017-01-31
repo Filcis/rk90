@@ -14,12 +14,16 @@
     overflow: hidden;
     display: inline-block;
     height: 45vh;
-    @include mq ('medium'){
+    @include mq ('medium') {
         height: 60vh;
     }
-    @include mq ('large'){
+    @include mq ('large') {
         height: 70vh;
     }
+}
+
+#single-post-featured-image {
+    height: 600px;
 }
 
 #content {
@@ -39,54 +43,62 @@
 }
 
 .flexbox .page-title-wrapper {
-    @include mq('from-medium'){
+    @include mq('from-medium') {
         @include display(flex);
         @include justify-content(center);
         .entry-header {
             @include display(flex);
-            @include justify-content(center);  
+            @include justify-content(center);
             @include flex-direction(column);
         }
     }
 }
 
-.no-flexbox .header-wrapper{
-    
-}
+.no-flexbox .header-wrapper {}
 
 .flexbox .single-post .header-wrapper {
     display: block;
 }
 
 .content-area__single {
-  border-top: 1px solid #ddd;
+    border-top: 1px solid #ddd;
     padding-top: 1.2em;
 }
+
 
 /* --------------------------------------------------------------------------------------------
     NEAT GRID
    -------------------------------------------------------------------------------------------- */
 
-.blog .site-content .container {
+.blog .site-content.container,
+.single .site-content.container {
     @include outer-container(90%);
     @include mq('large') {
-        @include outer-container();
-    }  
+        @include outer-container(1080px);
+    }
 }
 
 .container {
     @include outer-container(90%);
     @include mq('large') {
         @include outer-container(1080px);
-    }  
+    }
 }
+
+.site-content.container {
+    @include outer-container(90%);
+    @include mq('large') {
+        @include outer-container(860px);
+    }
+}
+
 .row {
-//    @include row();
+    //    @include row();
     @include span-columns(12);
     margin-bottom: 1.5em;
 }
 
-@include mq('from-medium'){
+@include mq('from-medium') {
     @for $i from 1 through 12 {
         .push-#{$i} {
             @include shift($i);
@@ -103,7 +115,7 @@
     }
 }
 
-@include mq('from-medium'){
+@include mq('from-medium') {
     @for $i from 1 through 12 {
         .medium-#{$i} {
             @include span-columns($i of 12);
@@ -111,7 +123,7 @@
     }
 }
 
-@include mq('large'){
+@include mq('large') {
     @for $i from 1 through 12 {
         .large-#{$i} {
             @include span-columns($i of 12);
@@ -119,11 +131,32 @@
     }
 }
 
+
 /* --------------------------------------------------------------------------------------------
     FOOTER
    -------------------------------------------------------------------------------------------- */
 
 #colophon {
-   min-height: 9rem;
+    min-height: 9rem;
     background-color: $color__background-footer;
+    position: relative;
+}
+
+.footer_image_wrapper {
+    position: absolute;
+    top: -280px;
+    right: 60px;
+    img {
+        height: 340px;
+    }
+    @include mq(1200px) {
+        position: absolute;
+        top: -80px;
+        img {
+            height: 180px;
+        }
+    }
+    @include mq(600px) {
+        display: none;
+    }
 }

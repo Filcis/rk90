@@ -10,13 +10,13 @@ $color__text-screen: #21759b;
 $color__text-input: #666;
 $color__text-input-focus: #111;
 $color__link: #dd2432;
-$color__background-link: lighten($color__link,40);
+$color__background-link: lighten($color__link,45);
 $color__background-more-link: lighten($color__link,15);
 $color__background-more-link__hover: lighten($color__link,5);
 $color__main-nav-link: #666;
-$color__link-visited: purple;
-$color__link-hover: midnightblue;
-$color__text-main: #666;
+$color__link-visited: $color__link;
+$color__link-hover: $color__link;
+$color__text-main: #444;
 
 $color__border-button: #ccc #ccc #bbb;
 $color__border-button-hover: #ccc #bbb #aaa;

@@ -10,7 +10,8 @@ html {
 
 p {
 	margin-bottom: 1.5em;
-    font-size: 1.1em;
+    font-size: 1.15em;
+    line-height: 1.58;
     color: $color__text-main;
 }
 
@@ -24,7 +25,20 @@ dfn, cite, em, i {
 }
 
 blockquote {
-	margin: 0 1.5em;
+	padding-top: 0.4em;
+    font-size: 1.6em;
+    margin: 0 0 1em 0;
+    border-top: 1px solid #fcc;
+    border-bottom: 1px solid #fcc;
+    p {
+        margin: 0 0 0.2em 0;
+        
+    }
+    footer {
+        font-size: 0.5em;
+        margin: 0 0 0.75em 0;
+        color: #666;
+    }
 }
 
 address {

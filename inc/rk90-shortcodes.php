@@ -26,7 +26,7 @@ function rk90_column( $atts, $content ) {
         $push = ' push-' . $atts['push'];
     } 
     
-    return '<div class="columns ' . $sizes . $push . '">' . do_shortcode( $content ) . '</div>';
+    return '<div class="columns ' . $sizes . $push . '"> ' . do_shortcode( $content ) . '</div>';
 }
 
 add_shortcode( 'rk90_column', 'rk90_column');

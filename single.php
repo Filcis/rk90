@@ -8,21 +8,27 @@
  */
 
 get_header(); ?>
-<!-- .featured image -->
-<?php
-if (has_post_thumbnail()) : 
-$rk90_featured_image_url = get_the_post_thumbnail_url(); ?>
-<div id="page-featured-image" style="background-image: url(<?php echo $rk90_featured_image_url ?>)"> </div>
-<?php endif;?>
-<!-- #featured image -->
 <div id="content" class="site-content container">
 
-    <header class="entry-header__single">
-            <?php the_title( '<h1 class="entry-title">', '</h1>' );  ?> 
+    <header class="entry-header__single medium-12 large-8">
+            <?php the_title( '<h1 class="entry-title">', '</h1>' );  
+        if ( 'post' === get_post_type() ) : ?>
+		<div class="entry-meta">
+			<?php rk90_posted_on(); ?>
+		</div><!-- .entry-meta -->
+		<?php
+		endif; ?> 
     </header> 
 
-	<div id="primary" class="content-area__single medium-7">
+	<div id="primary" class="content-area__single medium-8">
 		<main id="main" class="site-main" role="main">
+                <!-- .featured image -->
+<?php
+if (has_post_thumbnail()) : 
+the_post_thumbnail();
+
+    endif;?>
+<!-- #featured image -->
 
 		<?php
 		while ( have_posts() ) : the_post();
