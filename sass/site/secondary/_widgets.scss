@@ -1,14 +1,20 @@
 .widget-area {
     padding: 1em;
     @include mq('from-medium'){
-//    padding: 2em;
+    padding: 2em;
     }
 }
 
 aside .widget {
-	    padding: 0;
-        margin-bottom: 0.5em;
-        background-color: #fff;
+    padding: 0;
+    margin-bottom: 0.5em;
+    background-color: #fff;
+    li {
+        margin-bottom: 1em;
+        &:hover {
+            color: $color__link-hover;
+        }
+    }
 	select {
 		max-width: 100%;
 	}
@@ -38,7 +44,10 @@ footer .widget {
         padding: 0.55em;
         background-color: #eee;
         border: 1px solid #aaa;
-//        color: white;
+        &:hover {
+            background-color: $color__background-more-link__hover;
+            color: aliceblue;
+        }
     }
     padding-bottom: 1.4em;
 }

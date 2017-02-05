@@ -1,8 +1,12 @@
 a {
 	color: $color__link;
     .entry-content p & {
-    background-color: $color__background-link;
-        padding: 0.15em;
+    border-bottom: 2px solid $color__border-link;
+    padding: 0.15em;
+    @include transition(0.2s border ease-in-out);
+    }
+    .entry-content p &:hover {
+    border-bottom: 2px solid $color__border-link__hover;
     }
     text-decoration: none;
     
@@ -12,7 +16,7 @@ a {
 	&:hover,
 	&:focus,
 	&:active {
-		color: $color__link-hover;
+		color: $color__link-hover; 
 	}
 	&:focus {
 		outline: thin dotted;
@@ -30,8 +34,10 @@ a {
     background-color: $color__background-more-link;
     color: #fff;
     font-size: 0.8em;
+    border: none;
     &:hover {
         background-color: $color__background-more-link__hover;
+        border: none;
     }
 }
 
@@ -41,4 +47,9 @@ a {
     padding: 0.45em 0.5em;
     border-radius: 0.7em;
     border: 1px solid $color__background-more-link;
+    &:hover {
+        background-color: $color__background-more-link__hover;
+//        border: none;
+        color: aliceblue;
+    }
 }

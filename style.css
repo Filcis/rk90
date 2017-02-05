@@ -1104,10 +1104,15 @@ a {
   color: #dd2432;
   text-decoration: none; }
   .entry-content p a {
-    background-color: #fcebec;
-    padding: 0.15em; }
+    border-bottom: 2px solid #fcebec;
+    padding: 0.15em;
+    -webkit-transition: 0.2s border ease-in-out;
+    -moz-transition: 0.2s border ease-in-out;
+    transition: 0.2s border ease-in-out; }
+  .entry-content p a:hover {
+    border-bottom: 2px solid #eb7c85; }
   a:hover, a:focus, a:active {
-    color: #dd2432; }
+    color: #e76670; }
   a:focus {
     outline: thin dotted; }
   a:hover, a:active {
@@ -1119,9 +1124,11 @@ a {
   margin: 1.2em auto;
   background-color: #e76670;
   color: #fff;
-  font-size: 0.8em; }
+  font-size: 0.8em;
+  border: none; }
   .entry-content .more-link:hover {
-    background-color: #e03a47; }
+    background-color: #e03a47;
+    border: none; }
 
 .tags-links a,
 .cat-links a {
@@ -1129,6 +1136,10 @@ a {
   padding: 0.45em 0.5em;
   border-radius: 0.7em;
   border: 1px solid #e76670; }
+  .tags-links a:hover,
+  .cat-links a:hover {
+    background-color: #e03a47;
+    color: aliceblue; }
 
 /*--------------------------------------------------------------
 ## Menus
@@ -1307,11 +1318,18 @@ a {
 --------------------------------------------------------------*/
 .widget-area {
   padding: 1em; }
+  @media (min-width: 765px) {
+    .widget-area {
+      padding: 2em; } }
 
 aside .widget {
   padding: 0;
   margin-bottom: 0.5em;
   background-color: #fff; }
+  aside .widget li {
+    margin-bottom: 1em; }
+    aside .widget li:hover {
+      color: #e76670; }
   aside .widget select {
     max-width: 100%; }
   aside .widget.widget_search {
@@ -1337,6 +1355,9 @@ footer .widget {
     padding: 0.55em;
     background-color: #eee;
     border: 1px solid #aaa; }
+    .tagcloud a:hover {
+      background-color: #e03a47;
+      color: aliceblue; }
 
 /*--------------------------------------------------------------
 # Content
