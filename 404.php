@@ -10,10 +10,10 @@
 get_header(); ?>
 
 <header class="page-header container">
-    <h1 class="page-title"><?php esc_html_e( 'Oops! Nie znaleziony strony', 'rk90' ); ?></h1>
+    <h1 class="page-title"><?php esc_html_e( 'Oops! Nie znaleziono strony', 'rk90' ); ?></h1>
 </header><!-- .page-header -->
 <!-- .featured image -->
-<div id="page-featured-image" style="background-image: url(/assets/404.jpg)"> </div>
+<div id="page-featured-image" style="background-image: url(<?php echo get_template_directory_uri() . '/assets/404.jpg' ?>)"></div>
 <!-- #featured image -->
 <div id="content" class="site-content container">
 	<div id="primary" class="content-area">
@@ -23,11 +23,13 @@ get_header(); ?>
 
 
 				<div class="page-content">
-					<p><?php esc_html_e( 'It looks like nothing was found at this location. Maybe try one of the links below or a search?', 'rk90' ); ?></p>
-
+					<p><?php esc_html_e( 'Spróbuj wyszukiwania lub sprawdź linki poniżej', 'rk90' ); ?></p>
+                    <div class="row">
 					<?php
 						get_search_form();
-
+                    ?>
+                    </div>
+                    <?php
 						the_widget( 'WP_Widget_Recent_Posts' );
 
 						// Only show the widget if site has multiple categories.
@@ -35,7 +37,7 @@ get_header(); ?>
 					?>
 
 					<div class="widget widget_categories">
-						<h2 class="widget-title"><?php esc_html_e( 'Most Used Categories', 'rk90' ); ?></h2>
+						<h2 class="widget-title"><?php esc_html_e( 'Najpopularniejsze kategorie', 'rk90' ); ?></h2>
 						<ul>
 						<?php
 							wp_list_categories( array(
@@ -51,10 +53,6 @@ get_header(); ?>
 
 					<?php
 						endif;
-
-						/* translators: %1$s: smiley */
-						$archive_content = '<p>' . sprintf( esc_html__( 'Try looking in the monthly archives. %1$s', 'rk90' ), convert_smilies( ':)' ) ) . '</p>';
-						the_widget( 'WP_Widget_Archives', 'dropdown=1', "after_title=</h2>$archive_content" );
 
 						the_widget( 'WP_Widget_Tag_Cloud' );
 					?>
