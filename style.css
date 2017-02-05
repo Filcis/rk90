@@ -236,6 +236,34 @@ html {
 /*--------------------------------------------------------------
 # Layout
 --------------------------------------------------------------*/
+.flexbox body #page {
+  display: -webkit-box;
+  display: -moz-box;
+  display: box;
+  display: -webkit-flex;
+  display: -moz-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -moz-box-orient: vertical;
+  box-orient: vertical;
+  -webkit-box-direction: normal;
+  -moz-box-direction: normal;
+  box-direction: normal;
+  -webkit-flex-direction: column;
+  -moz-flex-direction: column;
+  flex-direction: column;
+  -ms-flex-direction: column;
+  min-height: 100vh; }
+  .flexbox body #page #content {
+    -webkit-box-flex: 1;
+    -moz-box-flex: 1;
+    box-flex: 1;
+    -webkit-flex: 1;
+    -moz-flex: 1;
+    -ms-flex: 1;
+    flex: 1; }
+
 #masthead {
   width: 100%;
   height: auto; }
@@ -330,23 +358,27 @@ html {
     NEAT GRID
    -------------------------------------------------------------------------------------------- */
 .blog .site-content.container,
-.single .site-content.container {
+.single .site-content.container,
+.archive .site-content.container {
   max-width: 90%;
   margin-left: auto;
   margin-right: auto; }
   .blog .site-content.container::after,
-  .single .site-content.container::after {
+  .single .site-content.container::after,
+  .archive .site-content.container::after {
     clear: both;
     content: "";
     display: block; }
   @media (min-width: 1201px) {
     .blog .site-content.container,
-    .single .site-content.container {
+    .single .site-content.container,
+    .archive .site-content.container {
       max-width: 1080px;
       margin-left: auto;
       margin-right: auto; }
       .blog .site-content.container::after,
-      .single .site-content.container::after {
+      .single .site-content.container::after,
+      .archive .site-content.container::after {
         clear: both;
         content: "";
         display: block; } }
@@ -813,8 +845,10 @@ h1 {
 
 .widget-title {
   font-family: "Josefin Sans", sans-serif;
-  font-size: 1.4rem;
-  font-weight: 300; }
+  font-size: 1.2rem;
+  font-weight: 800;
+  border-bottom: 1px solid #dedede;
+  padding-bottom: 0.5em; }
 
 .page-title-wrapper .entry-header {
   text-align: center; }
@@ -987,7 +1021,7 @@ input[type="submit"] {
   border: 1px solid;
   border-color: #ccc #ccc #bbb;
   border-radius: 3px;
-  background: #e6e6e6;
+  background: #ccc;
   color: rgba(0, 0, 0, 0.8);
   font-size: 12px;
   font-size: 0.75rem;
@@ -1050,6 +1084,15 @@ select {
 
 textarea {
   width: 100%; }
+
+.search-form input.search-field {
+  width: 70%;
+  margin-bottom: 0.6em; }
+.search-form input.search-submit {
+  border: none;
+  color: #fff;
+  padding: 0.5em 0.6em;
+  font-size: 1em; }
 
 /*--------------------------------------------------------------
 # Navigation
@@ -1263,16 +1306,19 @@ a {
 # Widgets
 --------------------------------------------------------------*/
 .widget-area {
-  background-color: #fafafc; }
-  @media (min-width: 765px) {
-    .widget-area {
-      padding: 2em; } }
+  padding: 1em; }
 
 aside .widget {
-  margin: 0 0 1.5em;
-  /* Make sure select elements fit in widgets. */ }
+  padding: 0;
+  margin-bottom: 0.5em;
+  background-color: #fff; }
   aside .widget select {
     max-width: 100%; }
+  aside .widget.widget_search {
+    background-color: #f5f5fa;
+    padding: 1.8em 1.2em;
+    border-radius: 1.2em;
+    border: 1px solid #bbb; }
 
 footer .widget {
   margin-top: 2em;
@@ -1283,6 +1329,14 @@ footer .widget {
 .site-info {
   padding-top: 0.5em;
   padding-bottom: 0.5em; }
+
+.tagcloud {
+  padding-bottom: 1.4em; }
+  .tagcloud a {
+    border-radius: 1em;
+    padding: 0.55em;
+    background-color: #eee;
+    border: 1px solid #aaa; }
 
 /*--------------------------------------------------------------
 # Content
@@ -1314,7 +1368,7 @@ footer .widget {
   margin: 0 0 1.5em; }
 
 .post-card {
-  border: 1px solid #eee;
+  border: 1px solid #ddd;
   padding: 2em; }
 
 @media (min-width: 765px) and (max-width: 1200px) {

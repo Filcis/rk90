@@ -25,9 +25,7 @@
             <a class="skip-link screen-reader-text" href="#content">
                 <?php esc_html_e( 'Skip to content', 'rk90' ); ?>
             </a>
-<!-----------------------------------------------------------
------------------ NAVIGATION AND BRANDING ---------------------
------------------------------------------------------------->
+<!-- ===== NAVIGATION AND BRANDING ===== -->
             <header id="masthead" class="site-header" role="banner">
                 <div class="main-navigation-wrapper">
                     <div class="container">

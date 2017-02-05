@@ -1,3 +1,15 @@
+//Sticky Footer Fix
+.flexbox body {
+    #page {
+    @include display(flex);
+    @include flex-direction(column);
+    min-height: 100vh;
+        #content {
+                    @include flex(1);
+        }
+    }
+}
+
 #masthead {
     width: 100%;
     height: auto;
@@ -71,7 +83,8 @@
    -------------------------------------------------------------------------------------------- */
 
 .blog .site-content.container,
-.single .site-content.container {
+.single .site-content.container,
+.archive .site-content.container {
     @include outer-container(90%);
     @include mq('large') {
         @include outer-container(1080px);

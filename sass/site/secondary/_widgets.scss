@@ -1,17 +1,23 @@
 .widget-area {
-    background-color: #fafafc;
+    padding: 1em;
     @include mq('from-medium'){
-    padding: 2em;
+//    padding: 2em;
     }
 }
 
 aside .widget {
-	margin: 0 0 1.5em;
-
-	/* Make sure select elements fit in widgets. */
+	    padding: 0;
+        margin-bottom: 0.5em;
+        background-color: #fff;
 	select {
 		max-width: 100%;
 	}
+    &.widget_search {
+        background-color: #f5f5fa;
+        padding: 1.8em 1.2em;
+        border-radius: 1.2em;
+        border: 1px solid #bbb;
+    }
 }
 
 footer .widget {
@@ -24,4 +30,15 @@ footer .widget {
 .site-info {
     padding-top: 0.5em;
     padding-bottom: 0.5em;
+}
+
+.tagcloud {
+    a {
+        border-radius: 1em;
+        padding: 0.55em;
+        background-color: #eee;
+        border: 1px solid #aaa;
+//        color: white;
+    }
+    padding-bottom: 1.4em;
 }

@@ -31,3 +31,16 @@ select {
 textarea {
 	width: 100%;
 }
+
+.search-form {
+    input.search-field {
+        width: 70%;
+        margin-bottom: 0.6em;
+    }
+    input.search-submit {
+        border:none;
+        color: $color__text-input-button;
+        padding: 0.5em 0.6em;
+        font-size: 1em;
+    }
+}
