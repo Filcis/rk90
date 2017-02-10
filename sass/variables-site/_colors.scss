@@ -17,7 +17,7 @@ $color__background-more-link: lighten($color__link,15);
 $color__background-more-link__hover: lighten($color__link,5);
 $color__main-nav-link: #666;
 $color__link-visited: $color__link;
-$color__link-hover: lighten($color__link,15);
+$color__link-hover: darken($color__link,15);
 $color__text-main: #444;
 
 $color__border-button: #ccc #ccc #bbb;

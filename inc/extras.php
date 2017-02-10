@@ -29,6 +29,21 @@ function rk90_body_classes( $classes ) {
 add_filter( 'body_class', 'rk90_body_classes' );
 
 /**
+ * Modifies default tag cloud arguments.
+ *
+ * @param array $args.
+ * @return array
+ */
+
+function rk90_custom_tag_cloud_widget($args) {
+	$args['largest'] = 14; //largest tag
+	$args['smallest'] = 10; //smallest tag
+	$args['unit'] = 'px'; //tag font unit
+	return $args;
+}
+add_filter( 'widget_tag_cloud_args', 'rk90_custom_tag_cloud_widget' );
+
+/**
  * Add a pingback url auto-discovery header for singularly identifiable articles.
  */
 function rk90_pingback_header() {

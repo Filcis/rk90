@@ -1112,7 +1112,7 @@ a {
   .entry-content p a:hover {
     border-bottom: 2px solid #eb7c85; }
   a:hover, a:focus, a:active {
-    color: #e76670; }
+    color: #9c1822; }
   a:focus {
     outline: thin dotted; }
   a:hover, a:active {
@@ -1132,8 +1132,8 @@ a {
 
 .tags-links a,
 .cat-links a {
-  font-size: 0.8em;
-  padding: 0.45em 0.5em;
+  font-size: 0.7em;
+  padding: 0.4em;
   border-radius: 0.7em;
   border: 1px solid #e76670; }
   .tags-links a:hover,
@@ -1329,7 +1329,7 @@ aside .widget {
   aside .widget li {
     margin-bottom: 1em; }
     aside .widget li:hover {
-      color: #e76670; }
+      color: #9c1822; }
   aside .widget select {
     max-width: 100%; }
   aside .widget.widget_search {
@@ -1352,9 +1352,11 @@ footer .widget {
   padding-bottom: 1.4em; }
   .tagcloud a {
     border-radius: 1em;
-    padding: 0.55em;
-    background-color: #eee;
-    border: 1px solid #aaa; }
+    display: inline-block;
+    padding: 0.4em;
+    background-color: #fafafa;
+    border: 1px solid #ccc;
+    margin: 0.2em; }
     .tagcloud a:hover {
       background-color: #e03a47;
       color: aliceblue; }
