@@ -1,7 +1,0 @@
-{
-	"name": "wordpress-rk90-theme",
-	"version": "1.0.0",
-	"devDependencies": {
-		"grunt": "~0.4.5"
-	}
-}

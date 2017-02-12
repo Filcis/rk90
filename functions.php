@@ -147,8 +147,6 @@ function rk90_scripts() {
     
     wp_enqueue_script( 'rk90-modernizr', get_template_directory_uri() . '/js/modernizr.js', array(), true );
     
-//    wp_enqueue_script( 'rk90-scroll', get_template_directory_uri() . '/js/rk90_scroll_effects.js', array(), true  );
-    
     wp_enqueue_style( 'rk90-fonts-headlines', 'https://fonts.googleapis.com/css?family=Josefin+Sans:400,700&amp;subset=latin-ext');
     
     wp_enqueue_style( 'rk90-fonts-body', 'https://fonts.googleapis.com/css?family=PT+Serif:400,400i,700&amp;subset=latin-ext');
