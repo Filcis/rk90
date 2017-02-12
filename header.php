@@ -32,7 +32,8 @@
                         <div class="site-branding"> 
                             <a class="site-logo" href="<?php echo esc_url( home_url( '/' ) ); ?>" rel="home">
                                 <img alt="<?php bloginfo( 'name' ); ?>" src="<?php echo get_template_directory_uri() . '/assets/logo_90.svg' ?>">
-                            </a> 
+                            </a>
+                            
                         </div>                  
                         <!-- .site-nav -->
                         <nav id="site-navigation" class="main-navigation small-12 medium-9" role="navigation">
@@ -42,8 +43,10 @@
                     </div>
                 </div>
                 <!-- .entry-header -->
+                <?php if ( !empty(rk90_subtitle_get_meta( 'rk90_subtitle' ) ) ) : ?>
                 <div class="page-title-wrapper container">
                 <?php rk90_page_title(); ?>
                 </div>
+                <?php endif; ?>
             </header>
             <!-- #masthead -->

@@ -10,7 +10,6 @@ License URI: http://www.gnu.org/licenses/gpl-2.0.html
 Text Domain: rk90
 Tags: right-sidebar, featured-images, news
 */
-
 /*--------------------------------------------------------------
 >>> TABLE OF CONTENTS:
 ----------------------------------------------------------------
@@ -259,6 +258,10 @@ html {
 #masthead {
   width: 100%;
   height: auto; }
+
+.single #masthead,
+.archive #masthead {
+  margin-bottom: 2em; }
 
 #page-featured-image {
   width: 100%;
@@ -1137,7 +1140,6 @@ a {
 ## Menus
 --------------------------------------------------------------*/
 .main-navigation-wrapper {
-  height: 100%;
   border-bottom: 1px solid #ccc; }
 
 @media (min-width: 765px) {

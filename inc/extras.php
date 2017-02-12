@@ -58,16 +58,15 @@ add_action( 'wp_head', 'rk90_pingback_header' );
  */
 function rk90_page_title() {
     if ( is_home() || is_page()) : ?>
-            <div class="entry-header medium-4">
-                 <?php
+    <div class="entry-header medium-4">
+        <?php
                     if (is_home()) {
                         echo '<h1 class="entry-title">' . apply_filters( 'the_title', get_the_title( get_option( 'page_for_posts' ) )) . '</h1>';
                     } else {
                         the_title( '<h1 class="entry-title">', '</h1>' ); 
                     }
-                 ?> 
-            </div>
-<?php   
+                 ?> </div>
+    <?php   
     rk90_the_subtitle_meta();
     else:
 //    do nothing
@@ -81,3 +80,16 @@ function rk90_post_class( $classes ) {
     return $classes;
 }
 add_filter( 'post_class', 'rk90_post_class' );
+
+
+function rk90_remove_more_jump_link($link) {
+    $offset = strpos($link, '#more-');
+    if ($offset) {
+        $end = strpos($link, '"',$offset);
+    }
+    if ($end) {
+        $link = substr_replace($link, '', $offset, $end-$offset);
+    }
+    return $link;
+}
+add_filter('the_content_more_link', 'rk90_remove_more_jump_link');
