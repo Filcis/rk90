@@ -33,6 +33,9 @@
                             <a class="site-logo" href="<?php echo esc_url( home_url( '/' ) ); ?>" rel="home">
                                 <img alt="<?php bloginfo( 'name' ); ?>" src="<?php echo get_template_directory_uri() . '/assets/logo_90.svg' ?>">
                             </a>
+                            <a class="site-logo" href="http://www.radio.katowice.pl/" rel="home" target="_blank">
+                                <img alt="Radio Katowice" src="<?php echo get_template_directory_uri() . '/assets/logo_radio.svg' ?>">
+                            </a>
                             
                         </div>                  
                         <!-- .site-nav -->

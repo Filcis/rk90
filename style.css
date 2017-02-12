@@ -1142,6 +1142,9 @@ a {
 .main-navigation-wrapper {
   border-bottom: 1px solid #ccc; }
 
+@media (min-width: 1px) and (max-width: 764px) {
+  .site-branding {
+    text-align: center; } }
 @media (min-width: 765px) {
   .site-branding {
     float: left; } }
@@ -1195,12 +1198,6 @@ a {
 .site-logo img {
   max-height: 6rem;
   padding: 0.25rem 0; }
-@media (min-width: 1px) and (max-width: 764px) {
-  .site-logo {
-    display: block;
-    margin: 0 auto;
-    width: 120px;
-    text-align: center; } }
 @media (min-width: 1401px) {
   .site-logo {
     max-height: 7rem; } }

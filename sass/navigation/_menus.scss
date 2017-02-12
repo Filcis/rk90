@@ -3,6 +3,9 @@
 }
 
 .site-branding {
+    @include mq('small') {
+        text-align: center;
+    }
     @include mq('from-medium') {
         float: left;
     }
@@ -68,12 +71,6 @@
     img {
         max-height: 6rem;
         padding: 0.25rem 0;
-    }
-    @include mq('small'){
-        display: block;
-        margin: 0 auto;
-        width: 120px;
-        text-align: center;
     }
     @include mq('very_large'){
         max-height: 7rem;
