@@ -46,7 +46,10 @@
                     </div>
                 </div>
                 <!-- .entry-header -->
-                <?php if ( !empty(rk90_subtitle_get_meta( 'rk90_subtitle' ) ) ) : ?>
+                <?php 
+                $rk90_sub_meta = rk90_subtitle_get_meta( 'rk90_subtitle' );
+                if ( !empty( $rk90_sub_meta ) ) : 
+                ?>
                 <div class="page-title-wrapper container">
                 <?php rk90_page_title(); ?>
                 </div>
