@@ -12,7 +12,10 @@
         <header class="entry-header">
             <?php
 		if ( !is_single() ) :
-			the_title( '<h1 class="entry-title_excerpt">', '</h1>' );
+			?>
+            <h1 class="entry-title_excerpt">
+            <a href="<?php the_permalink(); ?>" title="<?php the_title_attribute(); ?>"><?php the_title(); ?></a>
+        </h1> <?php
             if ( 'post' === get_post_type() ) : ?>
                 <div class="entry-meta">
                     <?php rk90_posted_on(); ?>

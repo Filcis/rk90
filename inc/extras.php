@@ -74,7 +74,7 @@ function rk90_page_title() {
 }
 
 function rk90_post_class( $classes ) {
-    if(is_home()){
+    if(is_home() || is_archive()){
         array_push($classes, 'post-card');
     }
     return $classes;

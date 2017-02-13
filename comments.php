@@ -37,10 +37,10 @@ if ( post_password_required() ) {
 
 		<?php if ( get_comment_pages_count() > 1 && get_option( 'page_comments' ) ) : // Are there comments to navigate through? ?>
 		<nav id="comment-nav-above" class="navigation comment-navigation" role="navigation">
-			<h2 class="screen-reader-text"><?php esc_html_e( 'Comment navigation', 'rk90' ); ?></h2>
+			<h2 class="screen-reader-text"><?php esc_html_e( 'Nawigacja', 'rk90' ); ?></h2>
 			<div class="nav-links">
 
-				<div class="nav-previous"><?php previous_comments_link( esc_html__( 'Older Comments', 'rk90' ) ); ?></div>
+				<div class="nav-previous"><?php previous_comments_link( esc_html__( 'Starsze komentarze', 'rk90' ) ); ?></div>
 				<div class="nav-next"><?php next_comments_link( esc_html__( 'Newer Comments', 'rk90' ) ); ?></div>
 
 			</div><!-- .nav-links -->

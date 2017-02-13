@@ -5,7 +5,7 @@
 */
 
 function rk90_subtitle_get_meta( $value ) {
-    if (!is_singular() && !is_home()) return;
+//    if (!is_singular() || !is_home()) return;
 	global $post;
     $id = $post->ID;
     if(is_home()){
