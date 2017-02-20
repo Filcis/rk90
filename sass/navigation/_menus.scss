@@ -1,5 +1,5 @@
 .main-navigation-wrapper {
-    border-bottom: 1px solid #ccc; 
+    border-bottom: 1px solid #ccc;
 }
 
 .site-branding {
@@ -21,8 +21,8 @@
         margin: 0;
         padding-left: 0;
         text-align: center;
-        @include mq('from-medium'){
-        text-align: right; 
+        @include mq('from-medium') {
+            text-align: right;
         }
     }
     li {
@@ -33,14 +33,14 @@
         @include mq('from-medium') {
             margin-right: 2rem;
             margin-left: 0;
-            }
+        }
         &:hover > a,
         &.focus > a {}
         &:last-child {
             @include mq('from-medium') {
-            margin-right: 0;
+                margin-right: 0;
             }
-            }
+        }
     }
     a {
         display: block;
@@ -54,15 +54,16 @@
             line-height: 1.8rem;
             margin: 2rem 0;
         }
-        @include mq('very_large'){
+        @include mq('very_large') {
             line-height: 2rem;
         }
         &:hover {
-        border-bottom: 2px solid red;
+            border-bottom: 2px solid red;
         }
     }
     .current_page_item > a,
-    .current-menu-item > a, {
+    .current-menu-item > a,
+    {
         border-bottom: 2px solid red;
     }
 }
@@ -72,7 +73,7 @@
         max-height: 6rem;
         padding: 0.25rem 0;
     }
-    @include mq('very_large'){
+    @include mq('very_large') {
         max-height: 7rem;
     }
 }
@@ -88,17 +89,29 @@
 .comment-navigation,
 .posts-navigation,
 .post-navigation {
+    .nav-previous,
+    .nav-next {
+        margin: 2em 0;
+        border-top: 2px solid lightgray;
+        padding-top: 1em;
+        border-bottom: 2px solid lightgray;
+        padding-bottom: 1em;
+        a {
+            font-family: $font__headings;
+            font-size: 1.2em;
+        }
+    }
     .site-main & {
         margin: 0 0 1.5em;
         overflow: hidden;
     }
     .nav-previous {
         float: left;
-        width: 50%;
+        width: 40%;
     }
     .nav-next {
         float: right;
         text-align: right;
-        width: 50%;
+        width: 40%;
     }
 }
