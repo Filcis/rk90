@@ -36,7 +36,7 @@
                             
                         </div>                  
                         <!-- .site-nav -->
-                        <nav id="site-navigation" class="main-navigation small-12 medium-9" role="navigation">
+                        <nav id="site-navigation" class="main-navigation small-12 medium-6" role="navigation">
                             <?php wp_nav_menu( array( 'theme_location' => 'menu-1', 'menu_id' => 'primary-menu' ) ); ?>
                         </nav>
                         <!-- #site-navigation -->

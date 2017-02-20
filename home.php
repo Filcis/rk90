@@ -16,7 +16,7 @@ get_header();
 //featured image
 if (has_post_thumbnail(get_option( 'page_for_posts' )) ) : 
     $rk90_featured_image_url = get_the_post_thumbnail_url( get_option( 'page_for_posts' ) ); ?>
-    <div id="page-featured-image" style="background-image: url(<?php echo $rk90_featured_image_url ?>)"> </div>
+    <div id="page-featured-image" style="background-image:url(<?php echo $rk90_featured_image_url ?>);"></div>
 <?php endif;?>
 <!-- #featured image -->
 <div id="content" class="site-content container">

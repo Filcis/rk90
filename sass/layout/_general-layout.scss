@@ -30,6 +30,7 @@
     position: relative;
     overflow: hidden;
     display: inline-block;
+    z-index:1;
     height: 45vh;
     @include mq ('medium') {
         height: 60vh;
