@@ -36,7 +36,7 @@
 			) );
 
 			wp_link_pages( array(
-				'before' => '<div class="page-links">' . esc_html__( 'Pages:', 'rk90' ),
+				'before' => '<div class="page-links">' . esc_html__( 'Strony:', 'rk90' ),
 				'after'  => '</div>',
 			) );
 		?> </div>
