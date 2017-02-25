@@ -42,6 +42,16 @@ function rk90_setup() {
 	 */
 	add_theme_support( 'post-thumbnails' );
     
+    add_image_size( 'rk90_galeria', 150, 150, true);
+    
+    add_filter( 'image_size_names_choose', 'rk90_custom_sizes' );
+ 
+    function rk90_custom_sizes( $sizes ) {
+            return array_merge( $sizes, array(
+                'rk90_galeria' => __( 'Galeria' ),
+            ) );
+    }
+    
     add_theme_support( 'custom-logo' );
 
 	// This theme uses wp_nav_menu() in one location.
