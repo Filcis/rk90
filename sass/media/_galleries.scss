@@ -1,11 +1,15 @@
 .gallery {
-	margin-bottom: 0;
+	margin: 1.5em 0;
+    overflow: auto;
     figure{
         margin: 0;
-      background-color: #777;
+        padding: 0.5em;
+        background-color: #fff;
         vertical-align:middle;
         figcaption{
-          vertical-align:middle;  
+          vertical-align:middle;
+            text-align: center;
+            background-color: #fafafa;
         }
         img {
             display: block;   
@@ -20,7 +24,7 @@
 
 .gallery-item {
 	display: inline-block;
-//    float: left;
+    float: left;
 	width: 100%;
 
 	.gallery-columns-2 & {

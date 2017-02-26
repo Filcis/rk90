@@ -1,13 +1,11 @@
 <?php
 /**
- * rk_90lat functions and definitions
- *
- * @link https://developer.wordpress.org/themes/basics/theme-functions/
- *
- * @package rk_90lat
+ * rk_90 functions
+ * @package rk_90
  */
 
 if ( ! function_exists( 'rk90_setup' ) ) :
+
 /**
  * Sets up theme defaults and registers support for various WordPress features.
  *
@@ -42,16 +40,12 @@ function rk90_setup() {
 	 */
 	add_theme_support( 'post-thumbnails' );
     
-    add_image_size( 'rk90_galeria', 150, 150, true);
-    
-    add_filter( 'image_size_names_choose', 'rk90_custom_sizes' );
- 
-    function rk90_custom_sizes( $sizes ) {
-            return array_merge( $sizes, array(
-                'rk90_galeria' => __( 'Galeria' ),
-            ) );
-    }
-    
+    /*
+	 * Enable image size for gallery. Filter to display new img size in admin panel.
+	 * @link https://developer.wordpress.org/reference/functions/add_image_size/
+	 */
+    set_post_thumbnail_size(250, 250, true);
+
     add_theme_support( 'custom-logo' );
 
 	// This theme uses wp_nav_menu() in one location.
@@ -150,16 +144,24 @@ add_action( 'widgets_init', 'rk90_widgets_init' );
  */
 function rk90_scripts() {
 	wp_enqueue_style( 'rk90-style', get_stylesheet_uri() );
+    
+    wp_enqueue_style( 'lightbox', get_template_directory_uri() . '/js/lightbox2-master/css/lightbox.css');
 
 	wp_enqueue_script( 'rk90-skip-link-focus-fix', get_template_directory_uri() . '/js/skip-link-focus-fix.js', array(), '20151215', true );
     
     wp_enqueue_script( 'elevatezoom', get_template_directory_uri() . '/js/elevatezoom-master/jquery.elevatezoom.js', array('jquery'), '', true );
     
-    wp_enqueue_script( 'rk90-modernizr', get_template_directory_uri() . '/js/modernizr.js', array(), true );
+    wp_enqueue_script( 'rk90-modernizr', get_template_directory_uri() . '/js/modernizr.js', array(),'', true );
+    
+    wp_enqueue_script( 'rk90-lightbox', get_template_directory_uri() . '/js/rk90-lightbox.js', array('jquery'), '', true );
+    
+    wp_enqueue_script( 'lightbox', get_template_directory_uri() . '/js/lightbox2-master/js/lightbox.js', array('jquery'), '', true );
     
     wp_enqueue_style( 'rk90-fonts-headlines', 'https://fonts.googleapis.com/css?family=Josefin+Sans:400,700&amp;subset=latin-ext');
     
     wp_enqueue_style( 'rk90-fonts-body', 'https://fonts.googleapis.com/css?family=PT+Serif:400,400i,700&amp;subset=latin-ext');
+    
+    
 
 	if ( is_singular() && comments_open() && get_option( 'thread_comments' ) ) {
 		wp_enqueue_script( 'comment-reply' );

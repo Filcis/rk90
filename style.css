@@ -1003,6 +1003,9 @@ figure {
   margin: 1em 0;
   /* Extra wide images within figure tags don't overflow the content area. */ }
 
+.attachment-post-thumbnail {
+  margin: 1em 0; }
+
 table {
   margin: 0 0 1.5em;
   width: 100%; }
@@ -1494,13 +1497,17 @@ object {
 ## Galleries
 --------------------------------------------------------------*/
 .gallery {
-  margin-bottom: 0; }
+  margin: 1.5em 0;
+  overflow: auto; }
   .gallery figure {
     margin: 0;
-    background-color: #777;
+    padding: 0.5em;
+    background-color: #fff;
     vertical-align: middle; }
     .gallery figure figcaption {
-      vertical-align: middle; }
+      vertical-align: middle;
+      text-align: center;
+      background-color: #fafafa; }
     .gallery figure img {
       display: block;
       vertical-align: text-bottom;
@@ -1510,6 +1517,7 @@ object {
 
 .gallery-item {
   display: inline-block;
+  float: left;
   width: 100%; }
   .gallery-columns-2 .gallery-item {
     max-width: 50%; }
