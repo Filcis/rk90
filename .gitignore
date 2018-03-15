@@ -2,6 +2,10 @@
 ## Eclipse
 #################
 
+node_modules/
+
+Gulpfile.js
+
 *.pydevproject
 .project
 .metadata
